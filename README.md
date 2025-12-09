@@ -12,8 +12,7 @@ A comprehensive Python library implementing various lossless and lossy compressi
 - [Compression Metrics](#compression-metrics)
 - [Project Structure](#project-structure)
 - [Requirements](#requirements)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 
