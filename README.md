@@ -8,9 +8,7 @@ A comprehensive Python library implementing various lossless and lossy compressi
 - [Features](#features)
 - [Installation](#installation)
 - [Algorithms Implemented](#algorithms-implemented)
-- [Usage Examples](#usage-examples)
 - [Compression Metrics](#compression-metrics)
-- [Project Structure](#project-structure)
 - [Requirements](#requirements)
 
 
@@ -31,20 +29,12 @@ This library provides implementations of both lossless and lossy compression alg
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/compression-algorithms.git
+git clone https://github.com/MazenArafat123/Data-Compression-Techniques.git
 cd compression-algorithms
 
-# Install required dependencies
-pip install -r requirements.txt
-```
-
-### Requirements
 
 ```
-numpy
-scipy
-Pillow
-```
+
 
 ## Algorithms Implemented
 
@@ -183,113 +173,6 @@ Non-uniform quantization adapts bin sizes to the data distribution using cluster
 - Higher computational complexity
 - Requires storing quantization table
 
-## Usage Examples
-
-### Text Compression with RLE
-
-```python
-from compression import RLECompression
-
-# Initialize compressor
-rle = RLECompression()
-
-# Compress a file
-compressed_path = rle.compress_file("input.txt", "output.rle")
-
-# Decompress
-decompressed_path = rle.decompress_file("output.rle", "restored.txt")
-```
-
-### Text Compression with Huffman
-
-```python
-from compression import HuffmanCompression
-
-# Initialize compressor
-huffman = HuffmanCompression()
-
-# Compress a file
-compressed_path = huffman.compress_file("input.txt", "output.huf")
-
-# Decompress
-decompressed_path = huffman.decompress_file("output.huf", "restored.txt")
-```
-
-### Text Compression with LZW
-
-```python
-from compression import LZWCompression
-
-# Initialize compressor
-lzw = LZWCompression()
-
-# Compress a file
-compressed_path = lzw.compress_file("input.txt", "output.lzw")
-
-# Decompress
-decompressed_path = lzw.decompress_file("output.lzw", "restored.txt")
-```
-
-### Text Compression with Golomb
-
-```python
-from compression import GolombCompression
-
-# Initialize with Golomb parameter
-golomb = GolombCompression(m=4)
-
-# Compress a file
-compressed_path = golomb.compress_file("input.txt", "output.golomb")
-
-# Decompress
-decompressed_path = golomb.decompress_file("output.golomb", "restored.txt")
-```
-
-### Image Quantization (Uniform)
-
-```python
-from compression import Quantization
-import numpy as np
-from PIL import Image
-
-# Initialize quantizer
-quant = Quantization()
-
-# Load image
-image = np.array(Image.open("input.jpg"))
-
-# Quantize with step size 32
-quantized, table = quant.uniform_quantize_rgb(image, step=32)
-
-# Dequantize to reconstruct
-reconstructed = quant.uniform_dequantize_rgb(table)
-
-# Save result
-Image.fromarray(reconstructed).save("output.jpg")
-```
-
-### Image Quantization (Non-uniform)
-
-```python
-from compression import Quantization
-import numpy as np
-from PIL import Image
-
-# Initialize quantizer
-quant = Quantization()
-
-# Load image
-image = np.array(Image.open("input.jpg"))
-
-# Quantize with 4 bits per channel
-quantized, tables = quant.nonuniform_quantize_rgb(image, bits=4)
-
-# Dequantize to reconstruct
-reconstructed = quant.nonuniform_dequantize_rgb(tables)
-
-# Save result
-Image.fromarray(reconstructed).save("output.jpg")
-```
 
 ## Compression Metrics
 
@@ -355,26 +238,7 @@ metrics.print_metrics(image_metrics, "Quantization")
   - Lower values indicate better quality
   - MSE = 0 means perfect reconstruction
 
-## Project Structure
 
-```
-compression-algorithms/
-│
-├── compression.py          # Main implementation file
-├── requirements.txt        # Python dependencies
-├── README.md              # This file
-│
-├── examples/
-│   ├── text_compression.py
-│   └── image_compression.py
-│
-└── tests/
-    ├── test_rle.py
-    ├── test_huffman.py
-    ├── test_lzw.py
-    ├── test_golomb.py
-    └── test_quantization.py
-```
 
 ## Algorithm Comparison
 
